@@ -3,9 +3,10 @@ import json
 
 tag='semanasanta'
 url='https://www.instagram.com/explore/tags/' + tag + '/?__a=1'
-
+filename='algot.json'
 def jprint(data_dict):
-	print(json.dumps(data_dict,indent=4))
+	with open(filename, 'a+') as outfile:
+		json.dump(data_dict,outfile)
 
 
 def get_ig_page(url, session=None):
